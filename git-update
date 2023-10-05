@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+git add .
+echo "input commit message:"
+read commit
+message=$commit
+git commit -m $message
