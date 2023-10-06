@@ -12,7 +12,7 @@ int main(void)
 
 	for (lcase = 'a' ; lcase <= 'z' ; lcase++)
 	{
-		if (lcase != 'e' || lcase != 'q')
+		if (lcase != 'e' && lcase != 'q')
 			putchar(lcase);
 		else
 			lcase++;
