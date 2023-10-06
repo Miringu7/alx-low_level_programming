@@ -10,12 +10,13 @@ int main(void)
 {
 	char lcase;
 
-	for (lcase = 'a' ; lcase <= 'z' ; lcase++)
+	for (lcase = 'a' ; lcase <= 'z' ;)
 	{
 		if (lcase != 'e' && lcase != 'q')
+		{
 			putchar(lcase);
-		else
 			lcase++;
+		}
 	}
 	putchar('\n');
 
