@@ -8,11 +8,11 @@
 
 int main(void)
 {
-	const char* message = "_putchar\n";
+	const char *message = "_putchar\n";
 	int i;
 	int meslen = strlen(message);
 
-	for(i = 0; i < meslen; i++)
+	for (i = 0; i < meslen; i++)
 	{
 		_putchar(message[i]);
 	}
