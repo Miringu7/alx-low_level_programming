@@ -1,11 +1,10 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
   * main - program that adds positive numbers.
   * @argc: argument values
   * @argv: argument vectors
-  * Return: returns 0
+  * Return: returns 0 and (1) if there is a non-digit
   */
 
 int main(int argc, char *argv[])
