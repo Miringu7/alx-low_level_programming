@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			}
 			sum = sum + value;
 		}
-		printf("sum: %d\n", sum);
+		printf("%d\n", sum);
 	}
 	return (0);
 }
