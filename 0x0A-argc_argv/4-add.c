@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
 {
 	int value, sum = 0, i;
 
-	printf("argc: %d\n", argc);
-
 	if (*argv[1] == '\0')
 		printf("0\n");
 
@@ -37,9 +35,8 @@ int main(int argc, char *argv[])
 				argv[i]++;
 			}
 			sum = sum + value;
-			printf("value: %d\n", value);
-			printf("sum: %d\n", sum);
 		}
+		printf("sum: %d\n", sum);
 	}
 	return (0);
 }
