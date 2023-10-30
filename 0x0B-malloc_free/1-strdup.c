@@ -19,7 +19,7 @@ char *_strdup(char *str)
 		size = size + 1;
 		str++;
 	}
-	duplicate = malloc (sizeof(char) * (size + 1));
+	duplicate = malloc(sizeof(char) * (size + 1));
 
 	if (str == NULL || duplicate == NULL)
 		return (NULL);
@@ -30,5 +30,5 @@ char *_strdup(char *str)
 	}
 	return (duplicate);
 
-	free (duplicate);
+	free(duplicate);
 }
