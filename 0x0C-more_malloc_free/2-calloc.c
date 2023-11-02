@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (zero_mem == NULL)
 		return (NULL);
 
-	zero_mem = memset (zero_mem, 0, (nmemb * size));
+	zero_mem = memset(zero_mem, 0, (nmemb * size));
 	return (zero_mem);
 	free(zero_mem);
 }
