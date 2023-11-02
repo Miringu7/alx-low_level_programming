@@ -3,11 +3,18 @@
 #include <stdlib.h>
 
 /**
- * main - check the code
+ * malloc_checked - allocates memory using malloc
  *
- * Return: Always 0.
+ * Return: returns a pointer to the allocated memory
  */
 
 void *malloc_checked(unsigned int b)
 {
+	int *str;
+
+	str = malloc(b);
+	if (str == NULL)
+		exit(98);
+
+	return (str);
 }
