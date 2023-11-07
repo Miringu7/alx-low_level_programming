@@ -9,7 +9,7 @@
  * @owner: third element
  *
  * Description: longer description
- * Return: returns dog_t
+ * Return: returns dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
