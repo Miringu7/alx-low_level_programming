@@ -11,7 +11,6 @@
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	int count = 0;
 	va_list args;
 
 	va_start(args, n);
@@ -21,8 +20,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		const char *str = va_arg(args, const char *);
 
 		if (str == NULL)
-			count++;
-		if (count >= 1)
 			printf("%s\n", "(nil)");
 		else
 		{
