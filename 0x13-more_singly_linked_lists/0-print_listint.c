@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_listint - check the code
+ * @h: string to check
+ * Return: number of strings in list.
  */
 
 size_t print_listint(const listint_t *h)
