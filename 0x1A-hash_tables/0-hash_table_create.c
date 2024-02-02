@@ -13,7 +13,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	if (!my_table)
 	{
-		return (0);
+		return (NULL);
 	}
 
 	my_table->size = size;
@@ -21,7 +21,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 			sizeof(hash_node_t *));
 	if (!my_table->array)
 	{
-		return (0);
+		return (NULL);
 	}
 
 	for (i = 0; i < my_table->size; i++)
