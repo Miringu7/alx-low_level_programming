@@ -8,9 +8,10 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *my_table = (hash_table_t *) calloc(sizeof(hash_node_t **), size);
+	hash_table_t *my_table = (hash_table_t *)
+		calloc(sizeof(hash_node_t **), size);
 
-	if (!my_table)
+	if (my_table == NULL)
 	{
 		return (NULL);
 	}
