@@ -13,9 +13,21 @@ hash_node_t *hash_node_create(const char *key, const char *value)
 
 	if (!new_node)
 		return (NULL);
-
 	new_node->key = (char *) malloc(strlen(key) + 1);
+	if (!new_node->key)
+	{
+		free(new_node);
+		return (NULL);
+	}
+
 	new_node->value = (char *) malloc(strlen(value) + 1);
+
+	if (!new_node->value)
+	{
+		free(new_node->key);
+		free(new_node);
+		return (NULL);
+	}
 
 	strcpy(new_node->key, key);
 	strcpy(new_node->value, value);
@@ -23,7 +35,6 @@ hash_node_t *hash_node_create(const char *key, const char *value)
 
 	return (new_node);
 }
-
 
 /**
   * hash_table_set - function that adds an element to the hash table.
@@ -55,15 +66,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index(u_key, ht->size);
 
 	if (ht->array[index] == NULL)
-	{
 		ht->array[index] = new_node;
-		return (1);
-	}
 	else
 	{
 		new_node->next = ht->array[index];
 		ht->array[index] = new_node;
-
-		return (1);
 	}
+	return (1);
 }
