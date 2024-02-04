@@ -48,31 +48,38 @@ hash_node_t *hash_node_create(const char *key, const char *value)
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node;
+	char *dup_value;
+	hash_node_t *new_node, *ptr;
 	unsigned long int index;
 	const unsigned char *u_key = (const unsigned char *)key;
+	
 
 	if (!u_key || !key || !ht || !ht->array)
 	{
 		return (0);
 	}
 
-	new_node = hash_node_create(key, value);
-	if (new_node == NULL)
-	{
-		return (0);
-	}
-
 	index = key_index(u_key, ht->size);
+	ptr = ht->array[index];
 
-	if (ht->array[index] == NULL)
+	while (!ptr)
 	{
-		ht->array[index] = new_node;
+		if (strcmp(ptr->key, key) == 0)
+		{
+			dup_value = strdup(value);
+			if (!dup_value)
+				return (0);
+			free(ptr->value);
+			ptr->value = dup_value;
+			return (1);
+		}
+		ptr = ptr->next;
 	}
-	else
-	{
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
-	}
+
+	new_node = hash_node_create(key, value);
+	if (!new_node)
+		return (0);
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
 	return (1);
 }

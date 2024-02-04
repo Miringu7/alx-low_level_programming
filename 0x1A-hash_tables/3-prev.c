@@ -51,9 +51,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node;
 	unsigned long int index;
 	const unsigned char *u_key = (const unsigned char *)key;
-	
 
 	if (!u_key || !key || !ht || !ht->array)
+	{
+		return (0);
+	}
+
+	new_node = hash_node_create(key, value);
+	if (new_node == NULL)
 	{
 		return (0);
 	}
@@ -62,16 +67,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht->array[index] == NULL)
 	{
-		new_node = hash_node_create(key, value);
-		if (new_node == NULL)
-		{
-			return (0);
-		}
 		ht->array[index] = new_node;
 	}
 	else
 	{
-		if 
 		new_node->next = ht->array[index];
 		ht->array[index] = new_node;
 	}
