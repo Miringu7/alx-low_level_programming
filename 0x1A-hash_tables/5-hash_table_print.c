@@ -10,7 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *temp;
 	unsigned long int i = 0;
-	int n;
+	int n = 0;
 
 	if (!ht || !ht->array)
 	{
@@ -23,7 +23,6 @@ void hash_table_print(const hash_table_t *ht)
 		if (ht->array[i])
 		{
 			temp = ht->array[i];
-			n = 0;
 			while (temp)
 			{
 				if (n)
