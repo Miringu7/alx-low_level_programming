@@ -58,7 +58,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	const unsigned char *u_key = (const unsigned char *)key;
 
-	if (!u_key)
+	if (!u_key || !key)
 	{
 		free(ht->array);
 		free(ht);
