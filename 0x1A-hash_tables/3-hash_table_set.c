@@ -63,7 +63,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ptr)
 	{
-		while (!ptr)
+		while (ptr)
 		{
 			if (strcmp(ptr->key, key) == 0)
 			{
