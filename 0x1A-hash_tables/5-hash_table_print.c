@@ -29,8 +29,8 @@ void hash_table_print(const hash_table_t *ht)
 				if (n)
 					printf(", ");
 				printf("'%s': '%s'", temp->key, temp->value);
-				temp = temp->next;
 				n = 1;
+				temp = temp->next;
 			}
 		}
 		i++;
